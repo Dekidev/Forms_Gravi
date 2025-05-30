@@ -52,39 +52,105 @@ class Pagamento(ctk.CTkFrame):
         self.label_titulo.grid(row=0,column=0, padx=10, pady=(10,0),sticky='n')
 
         self.label_data = ctk.CTkLabel(self, text='Data:')
-        self.label_data.grid(row=1,column=0, padx=10, pady=(10,0))
+        self.label_data.grid(row=1,column=0, padx=10, pady=(10,0), sticky='w')
         self.campo_data = ctk.CTkEntry(self, placeholder_text='Insira a Data')
-        self.campo_data.grid(row=2, column=0, padx=10, pady=(10,0))
+        self.campo_data.grid(row=1, column=1, padx=10, pady=10, sticky='e')
 
         self.label_forma = ctk.CTkLabel(self, text='Forma de Pagamento:')
-        self.label_forma.grid(row=1, column=1, padx=10, pady=(10,0))
-        self.campo_forma = ctk.CTkEntry(self,placeholder_text='Digite o desconto')
-        self.campo_forma.grid(row=2, column=1, padx=10, pady=(10,0))
+        self.label_forma.grid(row=2, column=0, padx=10, pady=(10,0), sticky='w')
+        self.campo_forma = ctk.CTkEntry(self,placeholder_text='Digite a forma de pagamento')
+        self.campo_forma.grid(row=2, column=1, padx=10, pady=10, sticky='e')
 
         self.label_ValorPago = ctk.CTkLabel(self, text='Valor pago:') 
-        self.label_ValorPago.grid(row=1,column=2, padx=10, pady=(10,0))    
+        self.label_ValorPago.grid(row=3,column=0, padx=10, pady=(10,0), sticky='w')    
         self.campo_ValorPago = ctk.CTkEntry(self,placeholder_text='Digite valor pago')
-        self.campo_ValorPago.grid(row=2, column=2, padx=10, pady=(10,0))
+        self.campo_ValorPago.grid(row=3, column=1, padx=10, pady=10, sticky='e')
 
         self.label_saldo = ctk.CTkLabel(self, text='Saldo:') 
-        self.label_saldo.grid(row=1,column=3, padx=10, pady=(10,0))    
+        self.label_saldo.grid(row=4,column=0, padx=10, pady=(10,0), sticky='w')    
         self.campo_saldo = ctk.CTkEntry(self,placeholder_text='Digite o saldo')
-        self.campo_saldo.grid(row=2, column=3, padx=10, pady=(10,0))
+        self.campo_saldo.grid(row=4, column=1, padx=10, pady=10, sticky='e')
+
+class Receita(ctk.CTkFrame):
+    def __init__(self, master):  
+        super().__init__(master)
+        self.label_data = ctk.CTkLabel(self, text='Data da receita:')
+        self.label_data.grid(row= 1, column=0, padx= 10, pady= (10,0))
+        self.campo_data = ctk.CTkEntry(self,placeholder_text='Digite a data')
+        self.campo_data.grid(row=2, column= 0, padx= 10, pady= (10,0))
+
+        self.label_CRM = ctk.CTkLabel(self, text='CRM:')
+        self.label_CRM.grid(row= 1, column=1, padx= 10, pady= (10,0))
+        self.campo_CRM = ctk.CTkEntry(self,placeholder_text='Digite o CRM')
+        self.campo_CRM.grid(row=2, column= 1, padx= 10, pady= (10,0))
+
+        self.label_Medico = ctk.CTkLabel(self, text='Nome do médico:')
+        self.label_Medico.grid(row= 3, column=0, padx= 10, pady= (10,0))
+        self.campo_Medico = ctk.CTkEntry(self,placeholder_text='Digite o nome')
+        self.campo_Medico.grid(row=4, column= 0, padx= 10, pady= 10, stick= 'ew', columnspan=3)
+
+class Longe(ctk.CTkFrame):
+    def __init__(self, master):  
+        super().__init__(master)
+        self.label_titulo = ctk.CTkLabel(self, text='Longe')
+        self.label_titulo.grid(row=0, column= 0, padx= 10, pady=(10,0))
+
+        self.label_ESF = ctk.CTkLabel(self, text='Esférico')
+        self.label_ESF.grid(row=1, column=1, padx= 10, pady=(10,0))
+        self.label_CIL = ctk.CTkLabel(self, text='Cilindrico')
+        self.label_CIL.grid(row=1, column=2, padx= 10, pady=(10,0))
+        self.label_EIX = ctk.CTkLabel(self, text='Eixo')
+        self.label_EIX.grid(row=1, column=3, padx= 10, pady=(10,0))
+        self.label_DNP = ctk.CTkLabel(self, text='DNP')
+        self.label_DNP.grid(row=1, column=4, padx= 10, pady=(10,0))
+
+        self.label_OD = ctk.CTkLabel(self, text='OD:')
+        self.label_OD.grid(row=2, column=0, padx= 10, pady=(10,0))
+        self.campo_ESF_OD = ctk.CTkEntry(self)
+        self.campo_ESF_OD.grid(row=2, column=1, padx= 10, pady=10)
+        self.campo_CIL_OD = ctk.CTkEntry(self)
+        self.campo_CIL_OD.grid(row=2, column=2, padx= 10, pady=10)
+        self.campo_EIX_OD = ctk.CTkEntry(self)
+        self.campo_EIX_OD.grid(row=2, column=3, padx= 10, pady=10)
+        self.campo_DNP_OD = ctk.CTkEntry(self)
+        self.campo_DNP_OD.grid(row=2, column=4, padx= 10, pady=10)
+
+        self.label_OE = ctk.CTkLabel(self, text='OE')
+        self.label_OE.grid(row=3, column=0, padx= 10, pady=(10,0))
+        self.campo_ESF_OE = ctk.CTkEntry(self)
+        self.campo_ESF_OE.grid(row=3, column=1, padx= 10, pady=10)
+        self.campo_CIL_OE = ctk.CTkEntry(self)
+        self.campo_CIL_OE.grid(row=3, column=2, padx= 10, pady=10)
+        self.campo_EIX_OE = ctk.CTkEntry(self)
+        self.campo_EIX_OE.grid(row=3, column=3, padx= 10, pady=10)
+        self.campo_DNP_OE = ctk.CTkEntry(self)
+        self.campo_DNP_OE.grid(row=3, column=4, padx= 10, pady=10)
+
+
 
 class FormFrame(ctk.CTkFrame):
     def __init__(self, master):  
         super().__init__(master)
-        self.label_titulo = ctk.CTkLabel(self, text='Formulario')
-        self.label_titulo.grid(row=0,column=0,padx=10, pady= 10,sticky= 'nsw', columnspan=2)
+        self.label_titulo = ctk.CTkLabel(self, text='Formulario', font=('arial bold',20))
+        self.label_titulo.grid(row=0, columnspan= 3, padx=10, pady= 10, sticky= 'ew')
 
         self.InfoVenda = InfoVenda(self)
         self.InfoVenda.grid(row=1, column=0, padx=10, pady= 10,sticky= 'nsw')
 
         self.ValorVenda = ValorVenda(self)
-        self.ValorVenda.grid(row=1, column=1, padx=10, pady=10,sticky='nsw')
+        self.ValorVenda.grid(row=1, column=1, padx=10, pady=10,sticky='ns')
 
         self.Pagamento = Pagamento(self)
-        self.Pagamento.grid(row=2,columnspan=2, padx=10, pady=10,sticky='nsw')
+        self.Pagamento.grid(row=1,column=2, padx=10, pady=10,sticky='nse')
+
+        self.label_titulo =  ctk.CTkLabel(self, text='Receita', font=('arial bold',20))
+        self.label_titulo.grid(row=3, columnspan=3, padx=10, pady=10, sticky='ew')
+
+        self.Receita = Receita(self)
+        self.Receita.grid(row=4, column=0, padx=10, pady=10,sticky='nsw')
+
+        self.Longe = Longe(self)
+        self.Longe.grid(row=4, column=1, padx=10, pady=10, sticky= 'nse')
         
 class App(ctk.CTk):
     def __init__(self):
