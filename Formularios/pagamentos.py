@@ -26,3 +26,12 @@ class Pagamento(ctk.CTkFrame):
         self.label_saldo.grid(row=4,column=0, padx=10, pady=(10,0), sticky='w')    
         self.campo_saldo = ctk.CTkEntry(self,placeholder_text='Digite o saldo')
         self.campo_saldo.grid(row=4, column=1, padx=10, pady=10, sticky='e')
+
+    @property
+    def obter_dados(self):
+        return {
+            "data_pagamento": self.campo_data.get(),
+            "forma_pagamento": self.campo_forma.get(),
+            "valor_pago": self.campo_ValorPago.get(),
+            "saldo": self.campo_saldo.get()
+        }

@@ -31,3 +31,13 @@ class InfoArmLonge(ctk.CTkFrame):
         self.label_COD.grid(row=4, column=0, padx=10, pady=10)
         self.campo_COD = ctk.CTkEntry(self)
         self.campo_COD.grid(row=4, column=1, padx=10, pady=10, columnspan=2)
+
+    @property
+    def obter_dados(self):
+        return {
+            "altura": self.campo_alt.get(),
+            "material": self.campo_material.get(),
+            "tratamento": self.campo_trat.get(),
+            "armacao": self.campo_ARM.get(),
+            "codigo": self.campo_COD.get()
+        }

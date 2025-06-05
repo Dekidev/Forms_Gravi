@@ -3,7 +3,7 @@ import customtkinter as ctk
 class InfoArmMulti(ctk.CTkFrame):
     def __init__(self, master):  
         super().__init__(master)
-        self.checkbox_titulo = ctk.CTkCheckBox(self, text='Bi/Multifocal')
+        self.checkbox_titulo = ctk.CTkCheckBox(self, text='Bi/Multi/Ocupacional')
         self.checkbox_titulo.grid(row=0, column= 0, padx= 10, pady=(10,0), columnspan= 2)
 
         self.label_alt = ctk.CTkLabel(self, text='Altura')
@@ -31,3 +31,13 @@ class InfoArmMulti(ctk.CTkFrame):
         self.label_COD.grid(row=4, column=0, padx=10, pady=10)
         self.campo_COD = ctk.CTkEntry(self)
         self.campo_COD.grid(row=4, column=1, padx=10, pady=10, columnspan=2)
+
+    @property
+    def obter_dados(self):
+        return {
+            "altura": self.campo_alt.get(),
+            "material": self.campo_material.get(),
+            "tratamento": self.campo_trat.get(),
+            "armacao": self.campo_ARM.get(),
+            "codigo": self.campo_COD.get()
+        }

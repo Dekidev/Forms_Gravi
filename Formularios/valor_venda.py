@@ -21,3 +21,11 @@ class ValorVenda(ctk.CTkFrame):
         #talvez campo total seja texto e nao input        
         self.campo_total = ctk.CTkEntry(self,placeholder_text='Digite o total')
         self.campo_total.grid(row=3, column=1, padx=10, pady=(10,0), sticky='e')
+
+    @property
+    def obter_dados(self):
+        return {
+            "valor_bruto": self.campo_bruto.get(),
+            "desconto": self.campo_desc.get(),
+            "valor_total": self.campo_total.get()
+        }

@@ -21,3 +21,11 @@ class InfoVenda(ctk.CTkFrame):
         #Lembrar de fazer o campo preencher a "linha toda"    
         self.campo_desc = ctk.CTkEntry(self,placeholder_text='Descreva a venda')
         self.campo_desc.grid(row=4, column=0, padx=10, pady=10, stick= 'ew', columnspan=3)
+
+    @property
+    def obter_dados(self):
+        return {
+            "data_venda": self.campo_data_venda.get(),
+            "OS": self.campo_OS.get(),
+            "descricao_venda": self.campo_desc.get()
+        }

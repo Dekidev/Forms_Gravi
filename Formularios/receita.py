@@ -17,3 +17,11 @@ class Receita(ctk.CTkFrame):
         self.label_Medico.grid(row= 3, column=0, padx= 10, pady= (10,0))
         self.campo_Medico = ctk.CTkEntry(self,placeholder_text='Digite o nome')
         self.campo_Medico.grid(row=4, column= 0, padx= 10, pady= 10, stick= 'ew', columnspan=3)
+
+    @property
+    def obter_dados(self):
+        return {
+            "data_receita": self.campo_data.get(),
+            "CRM": self.campo_CRM.get(),
+            "medico": self.campo_Medico.get()
+        }

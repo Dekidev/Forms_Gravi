@@ -18,22 +18,9 @@ class App(ctk.CTk):
         self.ResultFrame = ResultFrame(self)
         self.ResultFrame.grid(row=0, column=1, padx=10, pady=10, sticky='nsew')
 
-        btn_enviar = ctk.CTkButton(self, text='Enviar')
+        btn_enviar = ctk.CTkButton(self, text='Enviar', command= self.ResultFrame.atualizar_valores)
         btn_enviar.grid(row= 3, column= 0, padx=10, pady= 10, sticky= 'ew', columnspan= 2)
 
-""""
-#Frame de formulario
-frame_main = ctk.CTkFrame(app)
-frame_main.grid(row= 0, column=0, padx=10, pady= (10, 0), sticky= 'nsew')
-
-label_titulo = ctk.CTkLabel(frame_main, text='Preencha as informações da venda', font=('arial bold',20))
-label_titulo.place()
-
-#Frame de resposta
-frame_return = ctk.CTkFrame(app)
-frame_return.grid(row= 0, column= 1, padx=10, pady= (10, 0), sticky= 'nsew')
-"""
-#botao
-
-app= App()
-app.mainloop()
+if __name__ == '__main__':
+    app = App()
+    app.mainloop()

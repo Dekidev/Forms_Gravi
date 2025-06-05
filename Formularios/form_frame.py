@@ -10,9 +10,10 @@ from Formularios.info_arm_perto import InfoArmPerto
 from Formularios.info_arm_multi import InfoArmMulti
 
 class FormFrame(ctk.CTkFrame):
-    def __init__(self, master):  
-        super().__init__(master)
-        self.label_titulo = ctk.CTkLabel(self, text='Formulario', font=('arial bold',20))
+    def __init__(self, master): 
+        super().__init__(master) 
+
+        self.label_titulo = ctk.CTkLabel(self, text='Formulario')
         self.label_titulo.grid(row=0, columnspan= 2, padx=10, pady= 10, sticky= 'ew')
 
         self.InfoVenda = InfoVenda(self)
@@ -45,3 +46,4 @@ class FormFrame(ctk.CTkFrame):
         self.Info_arm_multi = InfoArmMulti(self)
         self.Info_arm_multi.grid(row=5, column=2, padx=5, pady= 10, sticky= 'ew')
     
+        
