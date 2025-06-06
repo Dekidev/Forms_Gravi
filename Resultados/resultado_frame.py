@@ -2,12 +2,14 @@ import customtkinter as ctk
 from Formularios.form_frame import FormFrame
 
 class ResultFrame(ctk.CTkScrollableFrame):
-    def __init__(self, master):  
-        self.forms = FormFrame(master)
+    def __init__(self, master, form_frame_instance):  
+        super().__init__(master)
+        self.forms = form_frame_instance
+        #self.forms = FormFrame()
         
 
         super().__init__(master) #colocar f e {} para variaveis
-        self.label_forms = ctk.CTkLabel(self, text= 'teste', anchor='w', justify= 'left')
+        self.label_forms = ctk.CTkLabel(self, text= 'Preencha o formulário e clique no botão "Gerar"', anchor='w', justify= 'left')
         self.label_forms.grid(row=0, column=0, padx=10, pady= 10, sticky= 'nw')
 
 
