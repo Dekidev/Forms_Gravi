@@ -2,16 +2,27 @@ import customtkinter as ctk
 from Formularios.form_frame import FormFrame
 
 class ResultFrame(ctk.CTkScrollableFrame):
-    def __init__(self, master, form_frame_instance):  
+    def __init__(self, master, form_frame_instance, copy_button_reference):
         super().__init__(master)
         self.forms = form_frame_instance
-        #self.forms = FormFrame()
+        self.grid_columnconfigure(0, weight=1)
         
-
-        super().__init__(master) #colocar f e {} para variaveis
         self.label_forms = ctk.CTkLabel(self, text= 'Preencha o formulário e clique no botão "Gerar"', anchor='w', justify= 'left')
-        self.label_forms.grid(row=0, column=0, padx=10, pady= 10, sticky= 'nw')
+        self.label_forms.grid(row=0, column=0, padx=10, pady= 10, sticky= 'nsew')
 
+    def copiar_clipboard(self):
+        texto_para_copiar = self.get_forms_atualizado()
+        self.clipboard_clear()
+        self.clipboard_append(texto_para_copiar)
+                # Agora, use a referência que guardamos para alterar o texto do botão
+        self.copiar_button.configure(text='Copiado Com Sucesso!')
+        self.after(2000, self.restaurar_texto_btn)
+    
+    def restaurar_texto_btn(self):
+        self.btn.configure(text='Copiar Formulário')
+
+    def atualizar_valores(self):
+        self.label_forms.configure(text= self.get_forms_atualizado() , anchor='w', justify= 'left')
 
     def get_forms_atualizado(self):
         data_info_venda = self.forms.InfoVenda.obter_dados   
@@ -119,8 +130,8 @@ class ResultFrame(ctk.CTkScrollableFrame):
 ---------------------------------
 =================================================='''
 
-    def atualizar_valores(self):
-        self.label_forms.configure(text= self.get_forms_atualizado() , anchor='w', justify= 'left')
+
+
             
 
         
