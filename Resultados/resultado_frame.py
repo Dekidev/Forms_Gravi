@@ -54,7 +54,7 @@ class ResultFrame(ctk.CTkScrollableFrame):
 ============================================================================
 ¦     D A T A      ¦    DISCRIMINAÇÃO  ¦     Vlr (R$)    ¦      SALDO     ¦ 
 =============================================================================
-{data_pagamento['data_pagamento']}   | {data_pagamento['forma_pagamento']}  |  {data_pagamento['valor_pago']}  |{data_pagamento['saldo']}
+{data_pagamento['data_pagamento']}         | {data_pagamento['forma_pagamento']}         |   {data_pagamento['valor_pago']}       |     {data_pagamento['saldo']}
 
 ---------------------------------
 ¦  DATA RECEITA   ¦   {data_receita['data_receita']}
@@ -67,15 +67,15 @@ class ResultFrame(ctk.CTkScrollableFrame):
 -------------------------------------------------------------------------------- 
 ¦                  ¦      ESF    ¦    CIL    ¦     EIXO   ¦    DNP    
 --------------------------------------------------------------------------------
-¦     O.D.     ¦ {data_longe['OD_esf']}   |   {data_longe['OD_cil']}   |   {data_longe['OD_eix']}   |   {data_longe['OD_dnp']}
+¦     O.D.     ¦    {data_longe['OD_esf']}   |   {data_longe['OD_cil']}    |    {data_longe['OD_eix']}    |   {data_longe['OD_dnp']}  
 --------------------------------------------------------------------------------
-¦     O.E.     ¦ {data_longe['OE_esf']}   |   {data_longe['OE_cil']}   |   {data_longe['OE_eix']}   |   {data_longe['OE_dnp']}
+¦     O.E.     ¦    {data_longe['OE_esf']}   |   {data_longe['OE_cil']}    |    {data_longe['OE_eix']}    |   {data_longe['OE_dnp']}
 -----------------------------------------------------------------------------------
 ¦ 
 ----------------------------------------------------------------------------------
 ¦  ALTURA ¦  MATERIAL  ¦   COR/TRATAMENTO   ¦
 ----------------------------------------------------------------------------------
-¦{data_arm_longe['altura']}  |   {data_arm_longe['material']}  |  {data_arm_longe['tratamento']}
+¦   {data_arm_longe['altura']}    |    {data_arm_longe['material']}    |    {data_arm_longe['tratamento']}
 ------------------------------------------------------------------------------------
 --------------------------------
 ¦       ARMAÇÃO      ¦ {data_arm_longe['armacao']}
@@ -89,15 +89,15 @@ class ResultFrame(ctk.CTkScrollableFrame):
 -------------------------------------------------------------------------------- 
 ¦                  ¦      ESF    ¦    CIL    ¦     EIXO   ¦    DNP    
 --------------------------------------------------------------------------------
-¦     O.D.     ¦ {data_perto['OD_esf']}   |   {data_perto['OD_cil']}   |   {data_perto['OD_eix']}   |   {data_perto['OD_dnp']}
+¦     O.D.     ¦    {data_perto['OD_esf']}   |   {data_perto['OD_cil']}    |    {data_perto['OD_eix']}    |   {data_perto['OD_dnp']}
 --------------------------------------------------------------------------------
-¦     O.E.     ¦ {data_perto['OE_esf']}   |   {data_perto['OE_cil']}   |   {data_perto['OE_eix']}   |   {data_perto['OE_dnp']}
+¦     O.E.     ¦    {data_perto['OE_esf']}   |   {data_perto['OE_cil']}    |    {data_perto['OE_eix']}    |   {data_perto['OE_dnp']}
 -----------------------------------------------------------------------------------
 ¦ 
 ----------------------------------------------------------------------------------
 ¦  ALTURA ¦  MATERIAL  ¦   COR/TRATAMENTO   ¦
 ----------------------------------------------------------------------------------
-¦{data_arm_perto['altura']}  |   {data_arm_perto['material']}  |  {data_arm_perto['tratamento']}
+¦   {data_arm_perto['altura']}    |    {data_arm_perto['material']}    |    {data_arm_perto['tratamento']}
 ------------------------------------------------------------------------------------
 --------------------------------
 ¦       ARMAÇÃO      ¦ {data_arm_perto['armacao']}
@@ -117,7 +117,7 @@ class ResultFrame(ctk.CTkScrollableFrame):
 ----------------------------------------------------------------------------------
 ¦  ALTURA ¦  MATERIAL  ¦   COR/TRATAMENTO   ¦
 ----------------------------------------------------------------------------------
-¦{data_arm_multi['altura']}  |   {data_arm_multi['material']}  |  {data_arm_multi['tratamento']}
+¦   {data_arm_multi['altura']}    |    {data_arm_multi['material']}    |    {data_arm_multi['tratamento']}
 ------------------------------------------------------------------------------------
 --------------------------------
 ¦       ARMAÇÃO      ¦ {data_arm_multi['armacao']}
